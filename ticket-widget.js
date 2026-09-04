@@ -34,49 +34,6 @@ const loadTicketcloud = (button) => {
   document.head.appendChild(script);
 };
 
-const closeTicketWidget = () => {
-  document.querySelector('#tc-widget-overlay')?.remove();
-  document.querySelector('iframe')?.parentElement?.remove();
-  document.querySelector('#clure-ticket-close')?.remove();
-  document.body.style.overflow = '';
-};
-
-const syncTicketCloseButton = () => {
-  const widgetOverlay = document.querySelector('#tc-widget-overlay');
-  const existingCloseButton = document.querySelector('#clure-ticket-close');
-
-  if (!widgetOverlay || existingCloseButton) return;
-
-  const closeButton = document.createElement('button');
-  closeButton.id = 'clure-ticket-close';
-  closeButton.type = 'button';
-  closeButton.setAttribute('aria-label', 'Закрыть окно покупки билета');
-  closeButton.textContent = '×';
-  closeButton.style.cssText = [
-    'position:fixed',
-    'top:18px',
-    'right:18px',
-    'z-index:2147483647',
-    'width:44px',
-    'height:44px',
-    'padding:0',
-    'border:1px solid rgba(255,255,255,.72)',
-    'border-radius:50%',
-    'background:#2457ff',
-    'color:#fff',
-    'font:32px/38px Arial,sans-serif',
-    'cursor:pointer',
-  ].join(';');
-  closeButton.addEventListener('click', closeTicketWidget);
-  document.body.appendChild(closeButton);
-};
-
-new MutationObserver(syncTicketCloseButton).observe(document.body, {
-  childList: true,
-  subtree: true,
-});
-syncTicketCloseButton();
-
 document.querySelectorAll('[data-tc-event]').forEach((button) => {
   bindHoverStyle(button);
   button.addEventListener('click', (event) => {
