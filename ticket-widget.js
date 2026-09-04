@@ -43,3 +43,8 @@ document.querySelectorAll('[data-tc-event]').forEach((button) => {
     }
   });
 });
+
+if (new URLSearchParams(window.location.search).has('open-ticket')) {
+  const ticketButton = document.querySelector('[data-tc-event]');
+  if (ticketButton) setTimeout(() => ticketButton.click(), 0);
+}

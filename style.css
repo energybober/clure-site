@@ -189,6 +189,15 @@ button.ticket {
   text-align: left !important;
   cursor: pointer !important;
 }
+.ticketcloud-trigger {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
 @media (max-width: 700px) {
   main {
     padding: 24px 18.7px 20px;
