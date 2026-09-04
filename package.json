@@ -4,6 +4,7 @@
   "private": true,
   "description": "Clure live music journal",
   "scripts": {
+    "build": "node -e \"console.log('Static site is ready to deploy')\"",
     "start": "node server.js"
   },
   "engines": {
