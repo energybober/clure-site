@@ -1,2 +1,260 @@
-:root{--logo-size:40px}header .logo{font-size:var(--logo-size)!important}.caption,.date,.info p,footer{font-size:14px!important}.info h2{font-size:30px!important;line-height:29px!important}.ticket,button.ticket{font-size:14px!important}.info p:last-child{word-break:keep-all!important;overflow-wrap:normal!important}@media(max-width:700px){header .logo{font-size:36px!important}.caption,.date,.info p,footer{font-size:13px!important}.info h2{font-size:25px!important;line-height:24px!important}.ticket,button.ticket{font-size:13px!important}footer div{flex-direction:row!important;gap:16px!important}footer div a{white-space:nowrap!important}}
-:root{--blue:#2457ff;--white:#fff;--mono:'DM Mono',monospace;--display:'Space Grotesk',sans-serif}*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--blue);color:var(--white)}body{font-family:var(--display);font-size:16px}a,a:visited{color:inherit}main{min-height:100vh;padding:30px 5.55vw 24px}header{margin-bottom:125px}.logo{font-size:26px;font-weight:600;letter-spacing:-1.3px;text-decoration:none}.caption,.date,.info p,footer{font-family:var(--mono);font-weight:500}.caption{font-size:10px;line-height:normal;letter-spacing:1px;color:rgba(255,255,255,.66);margin:0 0 38px;text-transform:uppercase}.schedule{max-width:1120px}.event{display:grid;grid-template-columns:140px minmax(0,770px) 150px;column-gap:30px;margin-bottom:41px;min-height:75px}.date{font-size:11px;line-height:normal;color:rgba(255,255,255,.66);padding-top:6px;white-space:nowrap}.info h2{font-size:31px;line-height:30.38px;letter-spacing:-1.3px;margin:0 0 9px;font-weight:600}.info p{font-size:11px;line-height:normal;margin:0 0 8px}.info a,footer a{text-decoration:none}.info a:hover,footer a:hover,.ticket:hover{opacity:.65}.ticket{font-family:var(--mono);font-size:11px;font-weight:500;line-height:normal;padding-top:6px;white-space:nowrap;text-decoration:none}.event:last-child{margin-bottom:0}.event:last-child .info h2{margin-bottom:9px}footer{display:flex;justify-content:space-between;max-width:1134px;padding-top:78px;font-size:10px;line-height:normal;color:rgba(255,255,255,.66)}footer div{display:flex;gap:28px}footer span{text-transform:lowercase}button.ticket{appearance:none!important;align-self:start!important;height:21px!important;min-height:21px!important;width:150px!important;min-width:0!important;max-width:150px!important;margin:0!important;padding:6px 0 0!important;background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important;color:var(--white)!important;font:500 11px var(--mono)!important;line-height:normal!important;text-align:left!important;cursor:pointer!important}@media(max-width:700px){main{padding:24px 18.7px 20px;display:flex;flex-direction:column}header{margin-bottom:88px}.logo{font-size:26px}.caption{font-size:10px;margin-bottom:38px}.event{grid-template-columns:minmax(0,1fr) 73px;column-gap:0;margin-bottom:32px;min-height:0}.date{grid-column:1/-1;padding:0;margin-bottom:13px;font-size:10px}.info{grid-column:1}.info h2{font-size:24px;line-height:23.52px;letter-spacing:-1.08px;margin-bottom:6px}.info p{font-size:10px;line-height:normal;margin-bottom:6px}.ticket,button.ticket{grid-column:2;grid-row:2;justify-self:end;width:73px!important;height:18px!important;min-height:18px!important;padding:4px 0 0!important;font-size:10px!important}.event:last-child{margin-bottom:0}footer{display:block;padding-top:60px;font-size:10px;line-height:25px}footer div{display:flex;flex-direction:column;gap:0;margin-top:0}}
+:root {
+  --logo-size: 40px;
+}
+header .logo {
+  font-size: var(--logo-size) !important;
+}
+.caption,
+.date,
+.info p,
+footer {
+  font-size: 14px !important;
+}
+.info h2 {
+  font-size: 30px !important;
+  line-height: 29px !important;
+}
+.ticket,
+button.ticket {
+  font-size: 14px !important;
+}
+.info p:last-child {
+  word-break: keep-all !important;
+  overflow-wrap: normal !important;
+}
+@media (max-width: 700px) {
+  header .logo {
+    font-size: 36px !important;
+  }
+  .caption,
+  .date,
+  .info p,
+  footer {
+    font-size: 13px !important;
+  }
+  .info h2 {
+    font-size: 25px !important;
+    line-height: 24px !important;
+  }
+  .ticket,
+  button.ticket {
+    font-size: 13px !important;
+  }
+  footer div {
+    flex-direction: row !important;
+    gap: 16px !important;
+  }
+  footer div a {
+    white-space: nowrap !important;
+  }
+}
+:root {
+  --blue: #2457ff;
+  --white: #fff;
+  --mono: "DM Mono", monospace;
+  --display: "Space Grotesk", sans-serif;
+}
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  background: var(--blue);
+  color: var(--white);
+}
+body {
+  font-family: var(--display);
+  font-size: 16px;
+}
+a,
+a:visited {
+  color: inherit;
+}
+main {
+  min-height: 100vh;
+  padding: 30px 5.55vw 24px;
+}
+header {
+  margin-bottom: 125px;
+}
+.logo {
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: -1.3px;
+  text-decoration: none;
+}
+.caption,
+.date,
+.info p,
+footer {
+  font-family: var(--mono);
+  font-weight: 500;
+}
+.caption {
+  font-size: 10px;
+  line-height: normal;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.66);
+  margin: 0 0 38px;
+  text-transform: uppercase;
+}
+.schedule {
+  max-width: 1120px;
+}
+.event {
+  display: grid;
+  grid-template-columns: 140px minmax(0, 770px) 150px;
+  column-gap: 30px;
+  margin-bottom: 41px;
+  min-height: 75px;
+}
+.date {
+  font-size: 11px;
+  line-height: normal;
+  color: rgba(255, 255, 255, 0.66);
+  padding-top: 6px;
+  white-space: nowrap;
+}
+.info h2 {
+  font-size: 31px;
+  line-height: 30.38px;
+  letter-spacing: -1.3px;
+  margin: 0 0 9px;
+  font-weight: 600;
+}
+.info p {
+  font-size: 11px;
+  line-height: normal;
+  margin: 0 0 8px;
+}
+.info a,
+footer a {
+  text-decoration: none;
+}
+.info a:hover,
+footer a:hover,
+.ticket:hover {
+  opacity: 0.65;
+}
+.ticket {
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 500;
+  line-height: normal;
+  padding-top: 6px;
+  white-space: nowrap;
+  text-decoration: none;
+}
+.event:last-child {
+  margin-bottom: 0;
+}
+.event:last-child .info h2 {
+  margin-bottom: 9px;
+}
+footer {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1134px;
+  padding-top: 78px;
+  font-size: 10px;
+  line-height: normal;
+  color: rgba(255, 255, 255, 0.66);
+}
+footer div {
+  display: flex;
+  gap: 28px;
+}
+footer span {
+  text-transform: lowercase;
+}
+button.ticket {
+  appearance: none !important;
+  align-self: start !important;
+  height: 21px !important;
+  min-height: 21px !important;
+  width: 150px !important;
+  min-width: 0 !important;
+  max-width: 150px !important;
+  margin: 0 !important;
+  padding: 6px 0 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  color: var(--white) !important;
+  font: 500 11px var(--mono) !important;
+  line-height: normal !important;
+  text-align: left !important;
+  cursor: pointer !important;
+}
+@media (max-width: 700px) {
+  main {
+    padding: 24px 18.7px 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  header {
+    margin-bottom: 88px;
+  }
+  .logo {
+    font-size: 26px;
+  }
+  .caption {
+    font-size: 10px;
+    margin-bottom: 38px;
+  }
+  .event {
+    grid-template-columns: minmax(0, 1fr) 73px;
+    column-gap: 0;
+    margin-bottom: 32px;
+    min-height: 0;
+  }
+  .date {
+    grid-column: 1/-1;
+    padding: 0;
+    margin-bottom: 13px;
+    font-size: 10px;
+  }
+  .info {
+    grid-column: 1;
+  }
+  .info h2 {
+    font-size: 24px;
+    line-height: 23.52px;
+    letter-spacing: -1.08px;
+    margin-bottom: 6px;
+  }
+  .info p {
+    font-size: 10px;
+    line-height: normal;
+    margin-bottom: 6px;
+  }
+  .ticket,
+  button.ticket {
+    grid-column: 2;
+    grid-row: 2;
+    justify-self: end;
+    width: 73px !important;
+    height: 18px !important;
+    min-height: 18px !important;
+    padding: 4px 0 0 !important;
+    font-size: 10px !important;
+  }
+  .event:last-child {
+    margin-bottom: 0;
+  }
+  footer {
+    display: block;
+    padding-top: 60px;
+    font-size: 10px;
+    line-height: 25px;
+  }
+  footer div {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-top: 0;
+  }
+}
