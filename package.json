@@ -1,0 +1,12 @@
+{
+  "name": "clure-music-journal",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Clure live music journal",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
