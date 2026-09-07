@@ -179,7 +179,7 @@ footer span {
 }
 .archive-list {
   max-width: 820px;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   list-style: none;
 }
@@ -224,7 +224,7 @@ footer span {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
   max-width: 820px;
-  margin-top: 52px;
+  margin: 52px auto 0;
 }
 .archive-sections a {
   display: flex;
@@ -245,7 +245,7 @@ footer span {
 }
 .archive-content-list {
   max-width: 820px;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   list-style: none;
 }
@@ -292,12 +292,16 @@ footer span {
   align-items: baseline;
   margin-bottom: 86px;
 }
+.archive-content-page .schedule {
+  max-width: 820px;
+  margin: 0 auto;
+}
 .archive-filters {
   display: flex;
   flex-wrap: wrap;
   gap: 16px 28px;
   max-width: 820px;
-  margin: 0 0 26px;
+  margin: 0 auto 26px;
   padding: 14px 0;
 }
 .archive-filter {
@@ -325,6 +329,7 @@ footer span {
 }
 .archive-article {
   max-width: 820px;
+  margin: 0 auto;
 }
 .archive-article-title {
   max-width: 820px;
