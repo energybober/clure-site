@@ -64,8 +64,8 @@ const articleLink = (item, itemType) => {
   const slug = item.slug?.current;
   if (!slug) return null;
   return itemType === 'articles'
-    ? `/articles/${encodeURIComponent(slug)}/`
-    : `/interviews/${encodeURIComponent(slug)}/`;
+    ? `article.html?slug=${encodeURIComponent(slug)}`
+    : `interview.html?slug=${encodeURIComponent(slug)}`;
 };
 
 const renderItem = (item, itemType) => {

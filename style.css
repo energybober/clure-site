@@ -286,6 +286,12 @@ footer span {
 .archive-content-page footer {
   margin-top: 78px;
 }
+.archive-content-page header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 86px;
+}
 .archive-filters {
   display: flex;
   flex-wrap: wrap;
@@ -590,6 +596,9 @@ button.ticket {
   }
   .archive-content-page footer {
     margin-top: 60px;
+  }
+  .archive-content-page header {
+    margin-bottom: 64px;
   }
   .archive-filters {
     gap: 12px;
