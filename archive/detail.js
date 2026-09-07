@@ -18,8 +18,7 @@ const normalizeLink = (href) => {
     if (url.hostname === 'clure.ru' || url.hostname === 'www.clure.ru') {
       const match = url.pathname.match(/^\/(articles|interviews)\/([^/]+)\/?$/);
       if (match) {
-        const file = match[1] === 'articles' ? 'article.html' : 'interview.html';
-        return `/archive/${match[1]}/${file}?slug=${encodeURIComponent(match[2])}${url.hash}`;
+        return `${url.pathname}${url.search}${url.hash}`;
       }
       return `${url.pathname}${url.search}${url.hash}`;
     }
