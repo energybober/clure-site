@@ -25,6 +25,20 @@ function resolveFile(requestUrl) {
   const requested = path.resolve(root, `.${pathname}`);
   if (!requested.startsWith(root)) return null;
 
+  const archiveAliases = {
+    '/articles': 'archive/articles/index.html',
+    '/articles/': 'archive/articles/index.html',
+    '/interviews': 'archive/interviews/index.html',
+    '/interviews/': 'archive/interviews/index.html',
+    '/playlists': 'archive/playlists/index.html',
+    '/playlists/': 'archive/playlists/index.html',
+  };
+  if (archiveAliases[pathname]) return path.join(root, archiveAliases[pathname]);
+  if (/^\/(articles|interviews)\/[^/]+\/?$/.test(pathname)) {
+    const section = pathname.split('/')[1];
+    return path.join(root, 'archive', section, section === 'articles' ? 'article.html' : 'interview.html');
+  }
+
   const candidates = [
     requested,
     path.join(requested, 'index.html'),
