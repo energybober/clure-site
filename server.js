@@ -19,6 +19,84 @@ const mimeTypes = {
   '.woff': 'font/woff',
   '.woff2': 'font/woff2',
 };
+// Максимум запросов с одного IP за окно.
+const RATE_LIMIT = 120;
+
+// Окно rate limit: 60 секунд.
+const RATE_WINDOW = 60 * 1000;
+
+// Максимальная длина URL.
+const MAX_URL_LENGTH = 2048;
+
+// Максимальная глубина пути.
+// Реальные страницы Clure с большей глубиной должны проходить
+// через существующий файл/маршрут, поэтому это не жёсткий
+// глобальный запрет.
+const MAX_PATH_SEGMENTS = 12;
+
+function isBlockedPath(pathname) {
+  const lower = pathname.toLowerCase();
+
+  /*
+   * Никогда не отдаём потенциальные секреты /
+   * служебные файлы.
+   */
+  const blockedExact = new Set([
+    '/.env',
+    '/.env.local',
+    '/.env.production',
+    '/.env.development',
+    '/.git',
+    '/.git/config',
+    '/.git/head',
+    '/.git/index',
+    '/composer.json',
+    '/composer.lock',
+    '/package-lock.json',
+    '/yarn.lock',
+  ]);
+
+  if (blockedExact.has(lower)) {
+    return true;
+  }
+
+  /*
+   * Любой путь, начинающийся с этих служебных директорий.
+   */
+  const blockedPrefixes = [
+    '/.git/',
+    '/.env.',
+    '/node_modules/',
+  ];
+
+  if (blockedPrefixes.some(prefix => lower.startsWith(prefix))) {
+    return true;
+  }
+
+  /*
+   * Частые автоматические security probes.
+   */
+  const blockedFiles = [
+    '/wp-admin',
+    '/wp-login.php',
+    '/xmlrpc.php',
+    '/phpmyadmin',
+    '/administrator',
+    '/admin.php',
+    '/shell.php',
+    '/config.php',
+  ];
+
+  if (
+    blockedFiles.some(
+      file => lower === file || lower.startsWith(file + '/')
+    )
+  ) {
+    return true;
+  }
+
+  return false;
+}
 
 function resolveFile(requestUrl) {
   const pathname = decodeURIComponent(new URL(requestUrl, 'http://localhost').pathname);
