@@ -23,12 +23,13 @@ const ticketStyle = (button) => {
   bindHoverStyle(button);
 };
 
-const loadTicketcloud = (button) => {
+const loadTicketcloud = (button, clickHandler) => {
   if (window.TicketcloudWidget) return;
   const script = document.createElement('script');
   script.src = 'https://ticketscloud.com/static/scripts/widget/tcwidget.js';
   script.onload = () => {
     ticketStyle(button);
+    button.removeEventListener('click', clickHandler);
     button.click();
   };
   document.head.appendChild(script);
@@ -36,15 +37,20 @@ const loadTicketcloud = (button) => {
 
 document.querySelectorAll('[data-tc-event]').forEach((button) => {
   bindHoverStyle(button);
-  button.addEventListener('click', (event) => {
+  const clickHandler = (event) => {
     if (!window.TicketcloudWidget) {
       event.preventDefault();
-      loadTicketcloud(button);
+      loadTicketcloud(button, clickHandler);
     }
-  });
+  };
+  button.addEventListener('click', clickHandler);
 });
 
 if (new URLSearchParams(window.location.search).has('open-ticket')) {
+  const cleanUrl = new URL(window.location.href);
+  cleanUrl.searchParams.delete('open-ticket');
+  window.history.replaceState({}, document.title, cleanUrl);
+
   const ticketButton = document.querySelector('[data-tc-event]');
   if (ticketButton) setTimeout(() => ticketButton.click(), 0);
 }
