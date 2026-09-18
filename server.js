@@ -242,6 +242,18 @@ const server = http.createServer((request, response) => {
   const ip = getClientIp(request);
   const requestUrl = request.url || '/';
 
+
+  const ua = String(request.headers['user-agent'] || '').toLowerCase();
+
+if (ua.includes('amazonbot')) {
+  response.writeHead(403, {
+    'Content-Type': 'text/plain; charset=utf-8',
+    'Cache-Control': 'no-store',
+    'X-Clure-Block': 'amazonbot'
+  });
+  response.end('Forbidden');
+  return;
+}
   /* URL too long */
   if (requestUrl.length > 2048) {
     return sendText(response, 414, 'URI Too Long');
