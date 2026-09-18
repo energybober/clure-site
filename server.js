@@ -21,6 +21,21 @@ const mimeTypes = {
   '.woff2': 'font/woff2',
 };
 
+response.writeHead(200, {
+  'Content-Type':
+    mimeTypes[extension] ||
+    'application/octet-stream',
+
+  'Cache-Control': 'no-cache',
+
+  'X-Clure-Server': 'security-v2',
+});
+
+return sendText(response, 404, 'Not found', {
+  'X-Clure-Server': 'security-v2',
+});
+
+
 /* =========================
    RATE LIMIT
    ========================= */
