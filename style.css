@@ -73,10 +73,16 @@ a:visited {
   color: inherit;
 }
 main {
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
   padding: 30px 5.55vw 24px;
 }
 header {
+  width: 100%;
+  max-width: 1180px;
+  margin-right: auto;
+  margin-left: auto;
   margin-bottom: 125px;
 }
 .logo {
@@ -156,7 +162,12 @@ footer a:hover,
 footer {
   display: flex;
   justify-content: space-between;
-  max-width: 1134px;
+  align-items: flex-end;
+  width: 100%;
+  max-width: 1180px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: auto;
   padding-top: 78px;
   font-size: 10px;
   line-height: normal;
@@ -165,6 +176,7 @@ footer {
 footer div {
   display: flex;
   gap: 28px;
+  align-items: center;
 }
 footer span {
   text-transform: lowercase;

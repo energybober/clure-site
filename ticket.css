@@ -71,6 +71,10 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
+  max-width: 1180px;
+  margin-right: auto;
+  margin-left: auto;
 }
 header a {
   font-size: 26px;
@@ -107,15 +111,27 @@ header .logo {
 .buy:hover {
   opacity: 0.65;
 }
+.donation {
+  display: block;
+  margin-top: 18px;
+  padding: 18px 22px;
+  font: 700 16px var(--mono);
+  line-height: normal;
+  text-align: center;
+  color: var(--blue);
+  background: var(--white);
+}
 footer {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  max-width: 1134px;
+  max-width: 1180px;
   width: 100%;
+  margin-right: auto;
+  margin-left: auto;
   margin-top: auto;
   padding-top: 78px;
-  font: 500 10px var(--mono);
+  font: 500 14px var(--mono);
   line-height: normal;
   color: rgba(255, 255, 255, 0.66);
 }

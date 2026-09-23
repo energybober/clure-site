@@ -21,10 +21,6 @@ const mimeTypes = {
   '.woff2': 'font/woff2',
 };
 
-const userAgent = String( request.headers['user-agent'] || '' ).toLowerCase();
-if (userAgent.includes('amazonbot')) { console.log( [AMAZONBOT_BLOCKED] ${ip} ${request.method} ${requestUrl} );
-return sendText(response, 403, 'Forbidden', { 'X-Clure-Block': 'amazonbot', }); }
-
 /* =========================
    RATE LIMIT
    ========================= */
