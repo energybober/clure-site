@@ -86,7 +86,7 @@ header .logo {
   font-size: 40px !important;
 }
 .back {
-  font: 500 11px var(--mono);
+  font: 500 14px var(--mono);
   text-decoration: none;
 }
 .ticket-page {
@@ -163,6 +163,9 @@ footer a:hover {
   .buy {
     padding-top: 20px;
     font-size: 11px;
+  }
+  .back {
+    font-size: 13px;
   }
   header .logo {
     font-size: 36px !important;
