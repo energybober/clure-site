@@ -26,8 +26,11 @@ button.ticket {
   overflow-wrap: normal !important;
 }
 @media (max-width: 700px) {
+  :root {
+    --logo-size: 36px;
+  }
   header .logo {
-    font-size: 36px !important;
+    font-size: var(--logo-size) !important;
   }
   .caption,
   .date,
@@ -460,9 +463,9 @@ footer span {
 }
 .archive-event-title {
   margin: 0;
-  font-size: clamp(42px, 8vw, 112px);
-  line-height: 0.88;
-  letter-spacing: -0.06em;
+  font-size: var(--logo-size);
+  line-height: normal;
+  letter-spacing: -1.3px;
   font-weight: 600;
 }
 .archive-event-meta {
