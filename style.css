@@ -116,11 +116,11 @@ footer {
   text-transform: uppercase;
 }
 .schedule {
-  max-width: 1120px;
+  max-width: 1180px;
 }
 .event {
   display: grid;
-  grid-template-columns: 140px minmax(0, 770px) 150px;
+  grid-template-columns: 140px minmax(0, 1fr) 150px;
   column-gap: 30px;
   margin-bottom: 41px;
   min-height: 75px;
@@ -534,7 +534,7 @@ button.ticket {
     flex-direction: column;
   }
   header {
-    margin-bottom: 88px;
+    margin-bottom: 125px;
   }
   .logo {
     font-size: 26px;
