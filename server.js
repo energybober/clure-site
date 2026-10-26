@@ -179,6 +179,24 @@ function resolveFile(requestUrl) {
     return null;
   }
 
+  const candidates = [
+    requested,
+    path.join(requested, 'index.html'),
+  ];
+
+  for (const candidate of candidates) {
+    try {
+      if (
+        fs.existsSync(candidate) &&
+        fs.statSync(candidate).isFile()
+      ) {
+        return candidate;
+      }
+    } catch {
+      return null;
+    }
+  }
+
   const archiveAliases = {
     '/articles': 'archive/articles/index.html',
     '/articles/': 'archive/articles/index.html',
@@ -208,24 +226,6 @@ function resolveFile(requestUrl) {
         ? 'article.html'
         : 'interview.html'
     );
-  }
-
-  const candidates = [
-    requested,
-    path.join(requested, 'index.html'),
-  ];
-
-  for (const candidate of candidates) {
-    try {
-      if (
-        fs.existsSync(candidate) &&
-        fs.statSync(candidate).isFile()
-      ) {
-        return candidate;
-      }
-    } catch {
-      return null;
-    }
   }
 
   return null;
@@ -360,4 +360,3 @@ server.listen(port, '0.0.0.0', () => {
     `Clure is running on port ${port}`
   );
 });
-
